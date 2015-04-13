@@ -393,6 +393,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func clickQuickLaunch(sender: NSButton) {
         let name = self.appsPopup.selectedItem?.title
         if (count(self.apps) > 0) &&  name != nil{
+            if name == "..quickapp" { return }
             print("name: ")
             print(name)
             let id = self.apps[name!]!
