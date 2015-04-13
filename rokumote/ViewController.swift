@@ -9,7 +9,37 @@
 import Cocoa
 
 import Alamofire
+import SWXMLHash
 
+
+// MARK: - helpers
+
+
+// string multiline join syntactic sugar
+// found http://stackoverflow.com/questions/24091233/swift-split-string-over-multiple-lines
+extension String {
+    init(sep:String, _ lines:String...){
+        self = ""
+        for (idx, item) in enumerate(lines) {
+            self += "\(item)"
+            if idx < lines.count-1 {
+                self += sep
+            }
+        }
+    }
+    
+    init(_ lines:String...){
+        self = ""
+        for (idx, item) in enumerate(lines) {
+            self += "\(item)"
+            if idx < lines.count-1 {
+                self += "\n"
+            }
+        }
+    }
+}
+
+// string subscript, inspired by stackoverflow
 extension String {
     
     subscript (i: Int) -> Character {
@@ -40,25 +70,96 @@ func delay(delay:Double, closure:()->()) {
 }
 
 
+// MARK: - Roku API
+
+let ST_DIAL = "urn:dial-multiscreen-org:service:dial:1"
+
 class RokuApi: NSObject {
     
     var host : String?
-
+    
     init(rokuhost: String) {
         super.init()
         self.host = rokuhost
     }
+
+    override init() {
+        super.init()
+    }
+
+    /*
+     * WARNING unfinished, does not work...
+    func discover() {
+        let group = ["239.255.255.250", 1900]
+        let message = "\r\n".join([
+            "M-SEARCH * HTTP/1.1",
+            "HOST: 239.255.255.250:1900",
+            "MAN: \"ssdp:discover\"",
+            "ST: roku:ecp",
+            "MX: 3",
+            "", "" ])
+        print("sending...  ")
+        println(message)
+       // sock = socket.socket(
+         //   socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+       // sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+       // sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 2)
+
+        let client = UDPClient(addr: "239.255.255.250", port: 1900)
+        let server = UDPServer(addr: "239.255.255.250", port: 1900)
+        let res = client.send_multicast(message)
+        println(String(format:" result:%s msg:%s",
+            (res.ok ? "sent" : "failed"), res.msg))
+        
+        // now get it!
+        let (data, addr, port) = server.recv(1024)
+        if port != 0 {
+            let ss = String.fromCString(UnsafePointer(data!))
+            println(ss)
+        } else {
+            println("nothing received")
+        }
+    }
+    */
     
     func getUri(host: String, cmd: String) -> String {
         return "http://\(host):8060/\(cmd)"
     }
     
     func sendcmd(cmd: String) {
+        if self.host == nil {
+            // try to get from defaults
+            let def = NSUserDefaults.standardUserDefaults()
+            self.host = def.stringForKey("ROKUHOST")
+        }
+        
         let uri = self.getUri(self.host!, cmd: cmd)
         Alamofire.request(.POST, uri )
         .responseString { (request, response, string, error) in
             println("response: \(response)")
             println("cmd: \(cmd) returned \(string)")
+        }
+    }
+
+    func getApps(callback: ([String: String])->()) {
+        if self.host == nil {
+            // try to get from defaults
+            let def = NSUserDefaults.standardUserDefaults()
+            self.host = def.stringForKey("ROKUHOST")
+        }
+        let uri = self.getUri(self.host!, cmd: "query/apps")
+        Alamofire.request(.GET, uri )
+        .validate()
+        .responseString { (_, _, string, error) in
+            if (error != nil) { return }
+            let xml = SWXMLHash.parse(string!)
+            var apps = [String: String]()
+            for app in xml["apps"]["app"] {
+                if let appname=app.element?.text {
+                    apps[appname] = app.element?.attributes["id"]
+                }
+            }
+            callback(apps)
         }
     }
     
@@ -136,11 +237,28 @@ class RokuApi: NSObject {
 
 }
 
+// MARK: - About
+
+class AboutController: NSViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.movableByWindowBackground = true
+    }
+}
+
+// MARK: - Prefs
 
 class PrefsController: NSViewController {
 
     @IBOutlet var hostfield: NSTextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.movableByWindowBackground = true
+    }
+
     override func viewDidAppear() {
         let defs = NSUserDefaults.standardUserDefaults()
         if let host = defs.stringForKey("ROKUHOST") {
@@ -155,49 +273,55 @@ class PrefsController: NSViewController {
     }
 }
 
+// MARK: - App View Controller
 
 class ViewController: NSViewController, NSTextFieldDelegate {
 
     @IBOutlet var inputField: NSTextField!
-    var roku : RokuApi?
+    @IBOutlet var appsPopup: NSPopUpButton!
+
+    var apps : [String:String] = [:]
+    let roku = RokuApi()
     var oldText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.movableByWindowBackground = true
     }
 
     override func viewDidAppear() {
         let defs = NSUserDefaults.standardUserDefaults()
         if let host = defs.stringForKey("ROKUHOST") {
-            self.roku = RokuApi(rokuhost: host)
+            self.roku.host = host
+            // setup our dropdown
+            self.roku.getApps() { (apps:[String:String]) in
+                for name in sorted(apps.keys) {
+                    self.apps[name] = apps[name]!
+                    println(name)
+                    self.appsPopup.addItemWithTitle(name)
+                }
+            }
         } else {
             self.getRokuHost()
         }
         super.viewDidAppear()
         self.inputField.delegate = self
-        self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.movableByWindowBackground = true
-        self.inputField.refusesFirstResponder()
-        self.inputField.resignFirstResponder()
     }
-
+    
     func getRokuHost() {
         var alert = NSAlert()
         alert.messageText = "Set the IP of your Roku in preferences"
         alert.runModal()
     }
     
-    override var representedObject: AnyObject? {
+   /* override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
         }
-    }
+    }*/
     
-    @IBAction func sendText(sender: NSButton) {
-        self.roku?.literal(self.inputField.stringValue)
-        self.inputField.stringValue = ""
-    }
+    // MARK: uitextfield delegate
     
     override func controlTextDidChange(obj: NSNotification) {
         var currstr = self.inputField.stringValue
@@ -206,63 +330,78 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         }
         if count(currstr) < count(oldText) {
             // send delete
-            roku?.backspace()
+            roku.backspace()
             oldText = currstr
         }
         if count(currstr) > count(oldText) {
             var char:String = currstr[-1]
             oldText = currstr
-            roku?.literal(char)
+            roku.literal(char)
         }
     }
     
+    // MARK: clicks
+    
     @IBAction func clickPlay(sender: NSButton) {
-        self.roku?.play()
+        self.roku.play()
     }
     
     @IBAction func clickHome(sender: NSButton) {
-        self.roku?.home()
+        self.roku.home()
     }
     
     @IBAction func clickLeft(sender: NSButton) {
-        self.roku?.left()
+        self.roku.left()
     }
     
     @IBAction func clickRight(sender: NSButton) {
-        self.roku?.right()
+        self.roku.right()
     }
 
     @IBAction func clickUp(sender: NSButton) {
-        self.roku?.up()
+        self.roku.up()
     }
 
     @IBAction func clickDown(sender: NSButton) {
-        self.roku?.down()
+        self.roku.down()
     }
     
     @IBAction func clickRewind(sender: NSButton) {
-        self.roku?.rewind()
+        self.roku.rewind()
     }
 
     @IBAction func clickForward(sender: NSButton) {
-        self.roku?.forward()
+        self.roku.forward()
     }
     
     @IBAction func clickEnter(sender: NSButton) {
-        self.roku?.enter()
+        self.roku.enter()
     }
     
     @IBAction func clickInfo(sender: NSButton) {
-        self.roku?.info()
+        self.roku.info()
     }
     
     @IBAction func clickBack(sender: NSButton) {
-        self.roku?.back()
+        self.roku.back()
     }
     
-    @IBAction func clickNetflix(sender: NSButton) {
-        self.roku?.launchNetflix()
+    @IBAction func clickReplay(sender: NSButton) {
+        self.roku.replay()
     }
     
+    @IBAction func clickQuickLaunch(sender: NSButton) {
+        let name = self.appsPopup.selectedItem?.title
+        if (count(self.apps) > 0) &&  name != nil{
+            print("name: ")
+            print(name)
+            let id = self.apps[name!]!
+            println("APPS:")
+            println(self.apps)
+            print(" id: ")
+            println(id)
+            self.roku.launchApp(id)
+            }
+    }
 }
 

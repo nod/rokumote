@@ -25,6 +25,8 @@
 		3F02D6771ADB13410067E8B1 /* rr.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D66A1ADB13410067E8B1 /* rr.png */; };
 		3F02D6781ADB13410067E8B1 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D66B1ADB13410067E8B1 /* star.png */; };
 		3F02D6791ADB13410067E8B1 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D66C1ADB13410067E8B1 /* up.png */; };
+		3F6E26FE1ADB8B1E008EC47C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6E26FD1ADB8B1E008EC47C /* icon.png */; };
+		3F6E27001ADB8D64008EC47C /* launchgo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6E26FF1ADB8D64008EC47C /* launchgo.png */; };
 		3F93342F1ADB314C00647679 /* netflix.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F93342E1ADB314C00647679 /* netflix.jpeg */; };
 		3F9334311ADB322900647679 /* cinemac.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9334301ADB322900647679 /* cinemac.png */; };
 		CF2818085E4DA89326CC8ED6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D26FBCAF6A95BD4DB28188 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -63,6 +65,9 @@
 		3F02D66A1ADB13410067E8B1 /* rr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rr.png; sourceTree = "<group>"; };
 		3F02D66B1ADB13410067E8B1 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		3F02D66C1ADB13410067E8B1 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		3F6779131ADB79A600B1A109 /* Objective-CBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-CBridgingHeader.h"; sourceTree = "<group>"; };
+		3F6E26FD1ADB8B1E008EC47C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		3F6E26FF1ADB8D64008EC47C /* launchgo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchgo.png; sourceTree = "<group>"; };
 		3F93342E1ADB314C00647679 /* netflix.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = netflix.jpeg; sourceTree = "<group>"; };
 		3F9334301ADB322900647679 /* cinemac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinemac.png; sourceTree = "<group>"; };
 		43D26FBCAF6A95BD4DB28188 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,12 +125,14 @@
 		3F02D63F1ADB13040067E8B1 /* rokumote */ = {
 			isa = PBXGroup;
 			children = (
+				3FD898CB1ADB62D600A06078 /* external */,
 				3F02D65F1ADB13290067E8B1 /* Images */,
 				3F02D6421ADB13040067E8B1 /* AppDelegate.swift */,
 				3F02D6441ADB13040067E8B1 /* ViewController.swift */,
 				3F02D6461ADB13040067E8B1 /* Images.xcassets */,
 				3F02D6481ADB13040067E8B1 /* Main.storyboard */,
 				3F02D6401ADB13040067E8B1 /* Supporting Files */,
+				3F6779131ADB79A600B1A109 /* Objective-CBridgingHeader.h */,
 			);
 			path = rokumote;
 			sourceTree = "<group>";
@@ -158,6 +165,8 @@
 		3F02D65F1ADB13290067E8B1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3F6E26FF1ADB8D64008EC47C /* launchgo.png */,
+				3F6E26FD1ADB8B1E008EC47C /* icon.png */,
 				3F93342E1ADB314C00647679 /* netflix.jpeg */,
 				3F9334301ADB322900647679 /* cinemac.png */,
 				3F02D6601ADB13410067E8B1 /* back.png */,
@@ -175,6 +184,13 @@
 				3F02D66C1ADB13410067E8B1 /* up.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		3FD898CB1ADB62D600A06078 /* external */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = external;
 			sourceTree = "<group>";
 		};
 		564EC88B875B0E60200E4026 /* Pods */ = {
@@ -271,6 +287,7 @@
 			files = (
 				3F02D6791ADB13410067E8B1 /* up.png in Resources */,
 				3F02D6771ADB13410067E8B1 /* rr.png in Resources */,
+				3F6E26FE1ADB8B1E008EC47C /* icon.png in Resources */,
 				3F02D6471ADB13040067E8B1 /* Images.xcassets in Resources */,
 				3F02D66F1ADB13410067E8B1 /* down.png in Resources */,
 				3F9334311ADB322900647679 /* cinemac.png in Resources */,
@@ -280,6 +297,7 @@
 				3F02D6721ADB13410067E8B1 /* home.png in Resources */,
 				3F02D6761ADB13410067E8B1 /* right.png in Resources */,
 				3F02D6751ADB13410067E8B1 /* replay.png in Resources */,
+				3F6E27001ADB8D64008EC47C /* launchgo.png in Resources */,
 				3F93342F1ADB314C00647679 /* netflix.jpeg in Resources */,
 				3F02D6741ADB13410067E8B1 /* playpause.png in Resources */,
 				3F02D64A1ADB13040067E8B1 /* Main.storyboard in Resources */,
@@ -472,6 +490,7 @@
 				INFOPLIST_FILE = rokumote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jeremy/Work/rokumote/rokumote/Objective-CBridgingHeader.h";
 			};
 			name = Debug;
 		};
@@ -484,6 +503,7 @@
 				INFOPLIST_FILE = rokumote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jeremy/Work/rokumote/rokumote/Objective-CBridgingHeader.h";
 			};
 			name = Release;
 		};
