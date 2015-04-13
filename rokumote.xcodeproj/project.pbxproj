@@ -27,6 +27,7 @@
 		3F02D6791ADB13410067E8B1 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D66C1ADB13410067E8B1 /* up.png */; };
 		3F6E26FE1ADB8B1E008EC47C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6E26FD1ADB8B1E008EC47C /* icon.png */; };
 		3F6E27001ADB8D64008EC47C /* launchgo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6E26FF1ADB8D64008EC47C /* launchgo.png */; };
+		3F6E27021ADB9080008EC47C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3F6E27011ADB9080008EC47C /* icon.icns */; };
 		3F93342F1ADB314C00647679 /* netflix.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F93342E1ADB314C00647679 /* netflix.jpeg */; };
 		3F9334311ADB322900647679 /* cinemac.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9334301ADB322900647679 /* cinemac.png */; };
 		CF2818085E4DA89326CC8ED6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D26FBCAF6A95BD4DB28188 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -68,6 +69,7 @@
 		3F6779131ADB79A600B1A109 /* Objective-CBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-CBridgingHeader.h"; sourceTree = "<group>"; };
 		3F6E26FD1ADB8B1E008EC47C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		3F6E26FF1ADB8D64008EC47C /* launchgo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchgo.png; sourceTree = "<group>"; };
+		3F6E27011ADB9080008EC47C /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		3F93342E1ADB314C00647679 /* netflix.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = netflix.jpeg; sourceTree = "<group>"; };
 		3F9334301ADB322900647679 /* cinemac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinemac.png; sourceTree = "<group>"; };
 		43D26FBCAF6A95BD4DB28188 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 		3F02D65F1ADB13290067E8B1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3F6E27011ADB9080008EC47C /* icon.icns */,
 				3F6E26FF1ADB8D64008EC47C /* launchgo.png */,
 				3F6E26FD1ADB8B1E008EC47C /* icon.png */,
 				3F93342E1ADB314C00647679 /* netflix.jpeg */,
@@ -290,6 +293,7 @@
 				3F6E26FE1ADB8B1E008EC47C /* icon.png in Resources */,
 				3F02D6471ADB13040067E8B1 /* Images.xcassets in Resources */,
 				3F02D66F1ADB13410067E8B1 /* down.png in Resources */,
+				3F6E27021ADB9080008EC47C /* icon.icns in Resources */,
 				3F9334311ADB322900647679 /* cinemac.png in Resources */,
 				3F02D6731ADB13410067E8B1 /* left.png in Resources */,
 				3F02D6701ADB13410067E8B1 /* enter.png in Resources */,

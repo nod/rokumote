@@ -394,18 +394,6 @@
             </objects>
             <point key="canvasLocation" x="-252" y="311.5"/>
         </scene>
-        <!--Collection View Item-->
-        <scene sceneID="Dlz-EV-oyG">
-            <objects>
-                <collectionViewItem id="Lqd-jt-c2g" sceneMemberID="viewController">
-                    <view key="view" id="svI-UE-4xX">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </collectionViewItem>
-                <customObject id="scr-3z-ADH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="back" width="17.600000381469727" height="15.199999809265137"/>
