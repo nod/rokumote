@@ -16,7 +16,7 @@ prettier than the python cli I whipped up.
 - @jcarbaugh made a great
   [python-roku](http://github.com/jcarbaugh/python-roku) library that inspired
   me
-- @jarrodlb dared me to do it
+- @jarrodb dared me to do it
 - my kids because they keep losing the remote
 - I wanted to learn a little bit of swift
 
