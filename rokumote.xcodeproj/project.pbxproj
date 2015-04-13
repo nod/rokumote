@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F02D6431ADB13040067E8B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02D6421ADB13040067E8B1 /* AppDelegate.swift */; };
+		3F02D6451ADB13040067E8B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02D6441ADB13040067E8B1 /* ViewController.swift */; };
+		3F02D6471ADB13040067E8B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6461ADB13040067E8B1 /* Images.xcassets */; };
+		3F02D64A1ADB13040067E8B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6481ADB13040067E8B1 /* Main.storyboard */; };
+		3F02D6561ADB13040067E8B1 /* rokumoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02D6551ADB13040067E8B1 /* rokumoteTests.swift */; };
+		3F02D66D1ADB13410067E8B1 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6601ADB13410067E8B1 /* back.png */; };
+		3F02D66E1ADB13410067E8B1 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6611ADB13410067E8B1 /* banner.png */; };
+		3F02D66F1ADB13410067E8B1 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6621ADB13410067E8B1 /* down.png */; };
+		3F02D6701ADB13410067E8B1 /* enter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6631ADB13410067E8B1 /* enter.png */; };
+		3F02D6711ADB13410067E8B1 /* ff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6641ADB13410067E8B1 /* ff.png */; };
+		3F02D6721ADB13410067E8B1 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6651ADB13410067E8B1 /* home.png */; };
+		3F02D6731ADB13410067E8B1 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6661ADB13410067E8B1 /* left.png */; };
+		3F02D6741ADB13410067E8B1 /* playpause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6671ADB13410067E8B1 /* playpause.png */; };
+		3F02D6751ADB13410067E8B1 /* replay.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6681ADB13410067E8B1 /* replay.png */; };
+		3F02D6761ADB13410067E8B1 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6691ADB13410067E8B1 /* right.png */; };
+		3F02D6771ADB13410067E8B1 /* rr.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D66A1ADB13410067E8B1 /* rr.png */; };
+		3F02D6781ADB13410067E8B1 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D66B1ADB13410067E8B1 /* star.png */; };
+		3F02D6791ADB13410067E8B1 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D66C1ADB13410067E8B1 /* up.png */; };
+		3F93342F1ADB314C00647679 /* netflix.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F93342E1ADB314C00647679 /* netflix.jpeg */; };
+		3F9334311ADB322900647679 /* cinemac.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9334301ADB322900647679 /* cinemac.png */; };
+		CF2818085E4DA89326CC8ED6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D26FBCAF6A95BD4DB28188 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F02D6501ADB13040067E8B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F02D6351ADB13040067E8B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F02D63C1ADB13040067E8B1;
+			remoteInfo = rokumote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F02D63D1ADB13040067E8B1 /* rokumote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rokumote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F02D6411ADB13040067E8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F02D6421ADB13040067E8B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F02D6441ADB13040067E8B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F02D6461ADB13040067E8B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F02D6491ADB13040067E8B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F02D64F1ADB13040067E8B1 /* rokumoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rokumoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F02D6541ADB13040067E8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F02D6551ADB13040067E8B1 /* rokumoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rokumoteTests.swift; sourceTree = "<group>"; };
+		3F02D6601ADB13410067E8B1 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		3F02D6611ADB13410067E8B1 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
+		3F02D6621ADB13410067E8B1 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		3F02D6631ADB13410067E8B1 /* enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enter.png; sourceTree = "<group>"; };
+		3F02D6641ADB13410067E8B1 /* ff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff.png; sourceTree = "<group>"; };
+		3F02D6651ADB13410067E8B1 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		3F02D6661ADB13410067E8B1 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		3F02D6671ADB13410067E8B1 /* playpause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playpause.png; sourceTree = "<group>"; };
+		3F02D6681ADB13410067E8B1 /* replay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replay.png; sourceTree = "<group>"; };
+		3F02D6691ADB13410067E8B1 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		3F02D66A1ADB13410067E8B1 /* rr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rr.png; sourceTree = "<group>"; };
+		3F02D66B1ADB13410067E8B1 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		3F02D66C1ADB13410067E8B1 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		3F93342E1ADB314C00647679 /* netflix.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = netflix.jpeg; sourceTree = "<group>"; };
+		3F9334301ADB322900647679 /* cinemac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cinemac.png; sourceTree = "<group>"; };
+		43D26FBCAF6A95BD4DB28188 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E648F6CEC6AB58FFE23FE29 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A5424EB0474557010D96EB57 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F02D63A1ADB13040067E8B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2818085E4DA89326CC8ED6 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F02D64C1ADB13040067E8B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FA061FEE411EC9B5A3151F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43D26FBCAF6A95BD4DB28188 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F02D6341ADB13040067E8B1 = {
+			isa = PBXGroup;
+			children = (
+				3F02D63F1ADB13040067E8B1 /* rokumote */,
+				3F02D6521ADB13040067E8B1 /* rokumoteTests */,
+				3F02D63E1ADB13040067E8B1 /* Products */,
+				564EC88B875B0E60200E4026 /* Pods */,
+				1FA061FEE411EC9B5A3151F7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F02D63E1ADB13040067E8B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F02D63D1ADB13040067E8B1 /* rokumote.app */,
+				3F02D64F1ADB13040067E8B1 /* rokumoteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F02D63F1ADB13040067E8B1 /* rokumote */ = {
+			isa = PBXGroup;
+			children = (
+				3F02D65F1ADB13290067E8B1 /* Images */,
+				3F02D6421ADB13040067E8B1 /* AppDelegate.swift */,
+				3F02D6441ADB13040067E8B1 /* ViewController.swift */,
+				3F02D6461ADB13040067E8B1 /* Images.xcassets */,
+				3F02D6481ADB13040067E8B1 /* Main.storyboard */,
+				3F02D6401ADB13040067E8B1 /* Supporting Files */,
+			);
+			path = rokumote;
+			sourceTree = "<group>";
+		};
+		3F02D6401ADB13040067E8B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F02D6411ADB13040067E8B1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F02D6521ADB13040067E8B1 /* rokumoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F02D6551ADB13040067E8B1 /* rokumoteTests.swift */,
+				3F02D6531ADB13040067E8B1 /* Supporting Files */,
+			);
+			path = rokumoteTests;
+			sourceTree = "<group>";
+		};
+		3F02D6531ADB13040067E8B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F02D6541ADB13040067E8B1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F02D65F1ADB13290067E8B1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3F93342E1ADB314C00647679 /* netflix.jpeg */,
+				3F9334301ADB322900647679 /* cinemac.png */,
+				3F02D6601ADB13410067E8B1 /* back.png */,
+				3F02D6611ADB13410067E8B1 /* banner.png */,
+				3F02D6621ADB13410067E8B1 /* down.png */,
+				3F02D6631ADB13410067E8B1 /* enter.png */,
+				3F02D6641ADB13410067E8B1 /* ff.png */,
+				3F02D6651ADB13410067E8B1 /* home.png */,
+				3F02D6661ADB13410067E8B1 /* left.png */,
+				3F02D6671ADB13410067E8B1 /* playpause.png */,
+				3F02D6681ADB13410067E8B1 /* replay.png */,
+				3F02D6691ADB13410067E8B1 /* right.png */,
+				3F02D66A1ADB13410067E8B1 /* rr.png */,
+				3F02D66B1ADB13410067E8B1 /* star.png */,
+				3F02D66C1ADB13410067E8B1 /* up.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		564EC88B875B0E60200E4026 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E648F6CEC6AB58FFE23FE29 /* Pods.debug.xcconfig */,
+				A5424EB0474557010D96EB57 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F02D63C1ADB13040067E8B1 /* rokumote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F02D6591ADB13040067E8B1 /* Build configuration list for PBXNativeTarget "rokumote" */;
+			buildPhases = (
+				4F3DD6E40BA12C336EB521C3 /* Check Pods Manifest.lock */,
+				3F02D6391ADB13040067E8B1 /* Sources */,
+				3F02D63A1ADB13040067E8B1 /* Frameworks */,
+				3F02D63B1ADB13040067E8B1 /* Resources */,
+				A0C31A94F69C3117CB2B50D1 /* Embed Pods Frameworks */,
+				B69CA2AFBDA2BF7F9BA27B7B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rokumote;
+			productName = rokumote;
+			productReference = 3F02D63D1ADB13040067E8B1 /* rokumote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F02D64E1ADB13040067E8B1 /* rokumoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F02D65C1ADB13040067E8B1 /* Build configuration list for PBXNativeTarget "rokumoteTests" */;
+			buildPhases = (
+				3F02D64B1ADB13040067E8B1 /* Sources */,
+				3F02D64C1ADB13040067E8B1 /* Frameworks */,
+				3F02D64D1ADB13040067E8B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F02D6511ADB13040067E8B1 /* PBXTargetDependency */,
+			);
+			name = rokumoteTests;
+			productName = rokumoteTests;
+			productReference = 3F02D64F1ADB13040067E8B1 /* rokumoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F02D6351ADB13040067E8B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Jeremy Kelley";
+				TargetAttributes = {
+					3F02D63C1ADB13040067E8B1 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					3F02D64E1ADB13040067E8B1 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 3F02D63C1ADB13040067E8B1;
+					};
+				};
+			};
+			buildConfigurationList = 3F02D6381ADB13040067E8B1 /* Build configuration list for PBXProject "rokumote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F02D6341ADB13040067E8B1;
+			productRefGroup = 3F02D63E1ADB13040067E8B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F02D63C1ADB13040067E8B1 /* rokumote */,
+				3F02D64E1ADB13040067E8B1 /* rokumoteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F02D63B1ADB13040067E8B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F02D6791ADB13410067E8B1 /* up.png in Resources */,
+				3F02D6771ADB13410067E8B1 /* rr.png in Resources */,
+				3F02D6471ADB13040067E8B1 /* Images.xcassets in Resources */,
+				3F02D66F1ADB13410067E8B1 /* down.png in Resources */,
+				3F9334311ADB322900647679 /* cinemac.png in Resources */,
+				3F02D6731ADB13410067E8B1 /* left.png in Resources */,
+				3F02D6701ADB13410067E8B1 /* enter.png in Resources */,
+				3F02D6711ADB13410067E8B1 /* ff.png in Resources */,
+				3F02D6721ADB13410067E8B1 /* home.png in Resources */,
+				3F02D6761ADB13410067E8B1 /* right.png in Resources */,
+				3F02D6751ADB13410067E8B1 /* replay.png in Resources */,
+				3F93342F1ADB314C00647679 /* netflix.jpeg in Resources */,
+				3F02D6741ADB13410067E8B1 /* playpause.png in Resources */,
+				3F02D64A1ADB13040067E8B1 /* Main.storyboard in Resources */,
+				3F02D6781ADB13410067E8B1 /* star.png in Resources */,
+				3F02D66D1ADB13410067E8B1 /* back.png in Resources */,
+				3F02D66E1ADB13410067E8B1 /* banner.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F02D64D1ADB13040067E8B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F3DD6E40BA12C336EB521C3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A0C31A94F69C3117CB2B50D1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B69CA2AFBDA2BF7F9BA27B7B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F02D6391ADB13040067E8B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F02D6451ADB13040067E8B1 /* ViewController.swift in Sources */,
+				3F02D6431ADB13040067E8B1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F02D64B1ADB13040067E8B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F02D6561ADB13040067E8B1 /* rokumoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F02D6511ADB13040067E8B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F02D63C1ADB13040067E8B1 /* rokumote */;
+			targetProxy = 3F02D6501ADB13040067E8B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F02D6481ADB13040067E8B1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F02D6491ADB13040067E8B1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F02D6571ADB13040067E8B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F02D6581ADB13040067E8B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3F02D65A1ADB13040067E8B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E648F6CEC6AB58FFE23FE29 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = rokumote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3F02D65B1ADB13040067E8B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5424EB0474557010D96EB57 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = rokumote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3F02D65D1ADB13040067E8B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = rokumoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rokumote.app/Contents/MacOS/rokumote";
+			};
+			name = Debug;
+		};
+		3F02D65E1ADB13040067E8B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = rokumoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rokumote.app/Contents/MacOS/rokumote";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F02D6381ADB13040067E8B1 /* Build configuration list for PBXProject "rokumote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F02D6571ADB13040067E8B1 /* Debug */,
+				3F02D6581ADB13040067E8B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F02D6591ADB13040067E8B1 /* Build configuration list for PBXNativeTarget "rokumote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F02D65A1ADB13040067E8B1 /* Debug */,
+				3F02D65B1ADB13040067E8B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F02D65C1ADB13040067E8B1 /* Build configuration list for PBXNativeTarget "rokumoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F02D65D1ADB13040067E8B1 /* Debug */,
+				3F02D65E1ADB13040067E8B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F02D6351ADB13040067E8B1 /* Project object */;
+}
