@@ -2,6 +2,10 @@
 
 A simple native mac app for controlling your roku.
 
+
+![rokumote](https://github.com/nod/rokumote/raw/master/Doc/rokumote_screencap.png)
+
+
 ## But why?
 
 Because my kids sometimes lose the remote and I wanted something slightly
