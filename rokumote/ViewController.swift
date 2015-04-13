@@ -69,6 +69,11 @@ func delay(delay:Double, closure:()->()) {
         dispatch_get_main_queue(), closure)
 }
 
+func alert(msg: String) {
+    var alert = NSAlert()
+    alert.messageText = msg
+    alert.runModal()
+}
 
 // MARK: - Roku API
 
@@ -131,8 +136,12 @@ class RokuApi: NSObject {
             // try to get from defaults
             let def = NSUserDefaults.standardUserDefaults()
             self.host = def.stringForKey("ROKUHOST")
+            if self.host == nil {
+                alert("You must set the Roku IP in preferences first")
+                return
+            }
         }
-        
+
         let uri = self.getUri(self.host!, cmd: cmd)
         Alamofire.request(.POST, uri )
         .responseString { (request, response, string, error) in
@@ -310,9 +319,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func getRokuHost() {
-        var alert = NSAlert()
-        alert.messageText = "Set the IP of your Roku in preferences"
-        alert.runModal()
+        alert("Set the IP of your Roku in preferences")
     }
     
    /* override var representedObject: AnyObject? {
