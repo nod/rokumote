@@ -89,8 +89,8 @@ class RokuApi: NSObject {
 
     /*
      * WARNING unfinished, does not work...
-    func discover() {
-        let group = ["239.255.255.250", 1900]
+     */
+    func discover() -> String {
         let message = "\r\n".join([
             "M-SEARCH * HTTP/1.1",
             "HOST: 239.255.255.250:1900",
@@ -98,29 +98,31 @@ class RokuApi: NSObject {
             "ST: roku:ecp",
             "MX: 3",
             "", "" ])
-        print("sending...  ")
-        println(message)
-       // sock = socket.socket(
-         //   socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
-       // sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-       // sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 2)
-
-        let client = UDPClient(addr: "239.255.255.250", port: 1900)
-        let server = UDPServer(addr: "239.255.255.250", port: 1900)
-        let res = client.send_multicast(message)
-        println(String(format:" result:%s msg:%s",
-            (res.ok ? "sent" : "failed"), res.msg))
         
-        // now get it!
-        let (data, addr, port) = server.recv(1024)
-        if port != 0 {
-            let ss = String.fromCString(UnsafePointer(data!))
-            println(ss)
+        let client = UDPClient(addr: "239.255.255.250", port: 1900)
+        var (success,errmsg)=client.send(str:message)
+        if success{
+            let (data, addr, port)=client.recv(1024*10)
+            let sdata = String.fromCString(UnsafePointer(data!))
+            /*
+            HTTP/1.1 200 OK.
+                Cache-Control: max-age=3600.
+            ST: roku:ecp.
+            USN: uuid:roku:ecp:1GU451101041.
+            Ext: .
+            Server: Roku UPnP/1.0 MiniUPnPd/1.4.
+            LOCATION: http://10.77.77.48:8060/.
+            */
+            if sdata!.rangeOfString("Server: Roku") != nil {
+                println("Found rokuhost: ", addr)
+                return addr
+            }
         } else {
-            println("nothing received")
+            println(errmsg)
         }
+        return ""
     }
-    */
+
     
     func getUri(host: String, cmd: String) -> String {
         return "http://\(host):8060/\(cmd)"
@@ -253,6 +255,8 @@ class PrefsController: NSViewController {
 
     @IBOutlet var hostfield: NSTextField!
     
+    let roku = RokuApi()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.window?.titlebarAppearsTransparent = true
@@ -271,6 +275,21 @@ class PrefsController: NSViewController {
         defs.setObject(self.hostfield.stringValue, forKey: "ROKUHOST")
         self.dismissController(nil)
     }
+    
+    @IBAction func clickSearch(sender: NSButton) {
+        let host = self.roku.discover()
+        if host != "" {
+            let defs = NSUserDefaults.standardUserDefaults()
+            defs.setObject(self.hostfield.stringValue, forKey: "ROKUHOST")
+            self.hostfield.stringValue = host
+            
+        }
+        self.dismissController(nil)
+    }
+    func setupConnection(){
+       
+    }
+    
 }
 
 // MARK: - App View Controller
