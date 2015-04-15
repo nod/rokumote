@@ -256,7 +256,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController title="Rokumote" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="ViewController" customModule="rokumote" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl" customClass="NSVisualEffectView">
+                    <view key="view" id="m2S-Jp-Qdl" customClass="KeyPressView" customModule="rokumote" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="170" height="301"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>

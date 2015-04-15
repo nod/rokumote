@@ -14,6 +14,24 @@ import SWXMLHash
 
 // MARK: - helpers
 
+// KEY DETECTION NOT WORKING RIGHT NOW
+
+class KeyPressView : NSVisualEffectView {
+    var keypressed : ((key: String) -> ())?
+    
+    override func keyDown(theEvent: NSEvent) {
+        if theEvent.keyCode == 32 {
+            self.keypressed?(key:" ")
+        }
+    }
+    
+    override var acceptsFirstResponder: Bool {
+        return true
+    }
+
+}
+
+
 
 // string multiline join syntactic sugar
 // found http://stackoverflow.com/questions/24091233/swift-split-string-over-multiple-lines
@@ -284,7 +302,7 @@ class PrefsController: NSViewController {
                 self.theme.selectedSegment = 0
             }
         }
-        
+
     }
     
     @IBAction func clickSave(sender: NSButton) {
@@ -324,10 +342,16 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet var appsPopup: NSPopUpButton!
     @IBOutlet var bgview: NSVisualEffectView!
     
+    
+    override func resignFirstResponder() -> Bool {
+        return true
+    }
+
     var apps : [String:String] = [:]
     let roku = RokuApi()
     var oldText = ""
     
+
     func setTheme(theme: String) {
         var mainview:NSVisualEffectView = self.view as! NSVisualEffectView
         mainview.blendingMode = NSVisualEffectBlendingMode.BehindWindow
@@ -346,6 +370,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        
         let defs = NSUserDefaults.standardUserDefaults()
 
         // cast our main vew ref correctly, it's already set in the storyboard
@@ -355,7 +380,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         } else {
             setTheme("transdark")
         }
-
+        
+        var kpview = self.view as! KeyPressView
+        kpview.becomeFirstResponder()
+        kpview.keypressed = {(key: String) in
+            println("key:" + key)
+        }
     }
 
     override func viewDidAppear() {
