@@ -494,7 +494,7 @@
 				INFOPLIST_FILE = rokumote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jeremy/Work/rokumote/rokumote/Objective-CBridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/rokumote/Objective-CBridgingHeader.h";
 			};
 			name = Debug;
 		};
@@ -507,7 +507,7 @@
 				INFOPLIST_FILE = rokumote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jeremy/Work/rokumote/rokumote/Objective-CBridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/rokumote/Objective-CBridgingHeader.h";
 			};
 			name = Release;
 		};
