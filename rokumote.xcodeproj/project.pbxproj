@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23B367D01ADCD46D00EB3CBF /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B367CD1ADCD46D00EB3CBF /* ysocket.swift */; };
+		23B367D11ADCD46D00EB3CBF /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 23B367CE1ADCD46D00EB3CBF /* yudpsocket.c */; };
+		23B367D21ADCD46D00EB3CBF /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B367CF1ADCD46D00EB3CBF /* yudpsocket.swift */; };
 		3F02D6431ADB13040067E8B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02D6421ADB13040067E8B1 /* AppDelegate.swift */; };
 		3F02D6451ADB13040067E8B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02D6441ADB13040067E8B1 /* ViewController.swift */; };
 		3F02D6471ADB13040067E8B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F02D6461ADB13040067E8B1 /* Images.xcassets */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23B367CD1ADCD46D00EB3CBF /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ysocket.swift; sourceTree = "<group>"; };
+		23B367CE1ADCD46D00EB3CBF /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
+		23B367CF1ADCD46D00EB3CBF /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		3F02D63D1ADB13040067E8B1 /* rokumote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rokumote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F02D6411ADB13040067E8B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F02D6421ADB13040067E8B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +198,9 @@
 		3FD898CB1ADB62D600A06078 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				23B367CD1ADCD46D00EB3CBF /* ysocket.swift */,
+				23B367CE1ADCD46D00EB3CBF /* yudpsocket.c */,
+				23B367CF1ADCD46D00EB3CBF /* yudpsocket.swift */,
 			);
 			name = external;
 			sourceTree = "<group>";
@@ -373,6 +382,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B367D11ADCD46D00EB3CBF /* yudpsocket.c in Sources */,
+				23B367D21ADCD46D00EB3CBF /* yudpsocket.swift in Sources */,
+				23B367D01ADCD46D00EB3CBF /* ysocket.swift in Sources */,
 				3F02D6451ADB13040067E8B1 /* ViewController.swift in Sources */,
 				3F02D6431ADB13040067E8B1 /* AppDelegate.swift in Sources */,
 			);
