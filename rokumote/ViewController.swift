@@ -307,15 +307,24 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     @IBOutlet var inputField: NSTextField!
     @IBOutlet var appsPopup: NSPopUpButton!
-
+    @IBOutlet var bgview: NSVisualEffectView!
+    
     var apps : [String:String] = [:]
     let roku = RokuApi()
     var oldText = ""
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.movableByWindowBackground = true
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        // cast our main vew ref correctly, it's already set in the storyboard
+        var mainview:NSVisualEffectView = self.view as! NSVisualEffectView
+        mainview.blendingMode = NSVisualEffectBlendingMode.BehindWindow
+        
+        // set the background to always be the dark blur
+        mainview.material = NSVisualEffectMaterial.Dark
+        
+        // set it to always be blurry regardless of window state
+        mainview.state = NSVisualEffectState.Active
     }
 
     override func viewDidAppear() {
@@ -334,6 +343,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             self.getRokuHost()
         }
         super.viewDidAppear()
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.movableByWindowBackground = true
+        
+        self.view.window?.styleMask = NSBorderlessWindowMask
         self.inputField.delegate = self
     }
     
