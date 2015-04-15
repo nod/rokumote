@@ -263,6 +263,7 @@ class AboutController: NSViewController {
 class PrefsController: NSViewController {
 
     @IBOutlet var hostfield: NSTextField!
+    @IBOutlet var theme: NSSegmentedControl!
     
     let roku = RokuApi()
     
@@ -277,11 +278,25 @@ class PrefsController: NSViewController {
         if let host = defs.stringForKey("ROKUHOST") {
             self.hostfield.stringValue = host
         }
+        
+        if let theme = defs.stringForKey("ROKUTHEME") {
+            if theme == "translight" {
+                self.theme.selectedSegment = 0
+            }
+        }
+        
     }
     
     @IBAction func clickSave(sender: NSButton) {
         let defs = NSUserDefaults.standardUserDefaults()
         defs.setObject(self.hostfield.stringValue, forKey: "ROKUHOST")
+        
+        if 0 == self.theme.selectedSegment {
+            defs.setObject("translight", forKey: "ROKUTHEME")
+        } else {
+            defs.setObject("transdark", forKey: "ROKUTHEME")
+        }
+
         self.dismissController(nil)
     }
     
@@ -313,18 +328,34 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     let roku = RokuApi()
     var oldText = ""
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        
-        // cast our main vew ref correctly, it's already set in the storyboard
+    func setTheme(theme: String) {
         var mainview:NSVisualEffectView = self.view as! NSVisualEffectView
         mainview.blendingMode = NSVisualEffectBlendingMode.BehindWindow
+        if "transdark" == theme {
+            // set it to always be blurry regardless of window state
+            mainview.state = NSVisualEffectState.Active
+            // set the background to always be the dark blur
+            mainview.material = NSVisualEffectMaterial.Dark
+        } else if "translight" == theme {
+            // set it to always be blurry regardless of window state
+            mainview.state = NSVisualEffectState.Active
+            // set the background to always be the dark blur
+            mainview.material = NSVisualEffectMaterial.Light
+        }
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        let defs = NSUserDefaults.standardUserDefaults()
+
+        // cast our main vew ref correctly, it's already set in the storyboard
         
-        // set the background to always be the dark blur
-        mainview.material = NSVisualEffectMaterial.Dark
-        
-        // set it to always be blurry regardless of window state
-        mainview.state = NSVisualEffectState.Active
+        if let theme = defs.stringForKey("ROKUTHEME") {
+            setTheme(theme)
+        } else {
+            setTheme("transdark")
+        }
+
     }
 
     override func viewDidAppear() {
@@ -343,9 +374,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             self.getRokuHost()
         }
         super.viewDidAppear()
+        
         self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.movableByWindowBackground = true
-        
         self.view.window?.styleMask = NSBorderlessWindowMask
         self.inputField.delegate = self
     }
