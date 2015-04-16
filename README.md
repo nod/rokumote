@@ -3,7 +3,7 @@
 A simple native mac app for controlling your roku.
 
 
-![rokumote](https://github.com/nod/rokumote/raw/master/Doc/rokumote_screencap.png)
+![rokumote](https://github.com/nod/rokumote/raw/master/Doc/dark_screencap.png)
 
 
 ## But why?
