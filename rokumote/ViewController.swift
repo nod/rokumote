@@ -326,7 +326,6 @@ class PrefsController: NSViewController {
             self.hostfield.stringValue = host
             
         }
-        self.dismissController(nil)
     }
     func setupConnection(){
        
