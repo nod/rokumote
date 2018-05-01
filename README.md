@@ -8,7 +8,7 @@ A simple native mac app for controlling your roku.
 
 ## Getting started
 
-You can get the latest [release by clicking this link](https://github.com/nod/rokumote/releases/tag/v0.3).   Just download it and put it in your Applications folder.  Double click then roku all the things.
+You can get the [latest release by clicking this link](https://github.com/nod/rokumote/releases/tag/v0.3).   Just download it and put it in your Applications folder.  Double click then roku all the things.
 
 ## But why?
 
