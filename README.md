@@ -6,6 +6,10 @@ A simple native mac app for controlling your roku.
 ![rokumote](https://github.com/nod/rokumote/raw/master/Doc/dark_screencap.png)
 
 
+## Getting started
+
+You can get the latest [release by clicking this link](https://github.com/nod/rokumote/releases/tag/v0.3).   Just download it and put it in your Applications folder.  Double click then roku all the things.
+
 ## But why?
 
 Because my kids sometimes lose the remote and I wanted something slightly
